@@ -422,8 +422,12 @@
     cursor: pointer;
   }
   .body-px {
-    padding-left: 40px;
-    padding-right: 40px;
+    position: relative;
+    width: 100%;
+    max-width: calc(1764px);
+    padding: 0px 40px;
+    margin: 0px auto;
+    height: 100%;
   }
   .body {
     display: flex;
