@@ -74,7 +74,7 @@
             </div>
             <div class="body-head-list" style="height:180px;">
               <div class="overflow-auto no-scrollbar body-head-list-box">
-                <ul class="w-auto flex items-center space-x-4 body-head-list-ul" style="">
+                <ul class="w-auto flex items-center space-x-4 body-head-list-ul no-scrollbar slide-container x mandatory-scroll-snapping" style="">
                   <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
                     <div class=" text-base leading-5">
                       <div class="mb-4 text-white font-bold">Reach dozens of qualified buyers</div>
@@ -516,6 +516,42 @@
     overflow: auto;
     width: calc(100vw - ((100vw - 1764px)/2) - 423px);
     margin-right: calc((1764px - 100vw)/2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    font-family: monospace;
+  }
+  .slide-container {
+    display: flex;
+    overflow: auto;
+    outline: 1px dashed lightgray;
+    flex: none;
+  }
+  .slide-container.x {
+    width: 100%;
+    height: 180px;
+    flex-flow: row nowrap;
+  }
+  
+  /* scroll-snap */
+  .x.mandatory-scroll-snapping {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .x.proximity-scroll-snapping {
+    scroll-snap-type: x proximity;
+  }
+  
+  .slide-container > li {
+    scroll-snap-align: center;
+    flex: none;
+  }
+  
+  .x.slide-container > li {
+    font-size: 64px;
+    width: 372px;
+    height: 180px;
   }
   .body-head-list-ul {
     width:1553pxpx;
@@ -875,6 +911,7 @@
       width: calc(100vw - 16px);
       margin-right: -16px;
     }
+    
     .body-head-title {
       font-size:16px;
       line-height: 20px;
