@@ -414,9 +414,6 @@
   a {
     text-decoration: none;
   }
-  .font-everett {
-    font-family: Everett;
-  }
   .font-space {
     font-family: Space Grotesk;
   }

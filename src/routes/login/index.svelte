@@ -1,7 +1,7 @@
 <script>
-  import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-  import { auth, db } from "../../firebase";
-  import { updateDoc, doc } from "firebase/firestore";
+  // import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+  // import { auth, db } from "../../firebase";
+  // import { updateDoc, doc } from "firebase/firestore";
 
   let phone;
   let phoneError = false;
