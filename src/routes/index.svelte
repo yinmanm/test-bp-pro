@@ -6,7 +6,7 @@
 </svelte:head>
 
 <section class="page">
-  <div>
+  <div style="max-width:100%;overflow:hidden;">
     <nav class="mobile-nav">
       <div class="mobile-nav-px">
         <div class="mobile-nav-flex">
@@ -28,7 +28,7 @@
                 </a>
               </div>
               <div style="margin-bottom: 16px;">
-                <a href="/" class="font-space text-white font-bold text-base">Our Process</a>
+                <a href="/" class=" text-white font-bold text-base">Our Process</a>
               </div>
               <div style="margin-bottom: 16px;">
                 <a href="/" class="hover-text-white" style="color:#888888;font-size:14px;line-height: 20px;transition: color 0.25s ease 0s;">Respond in 24 hours</a>
@@ -50,7 +50,7 @@
             </div>
           </div>
         </div>
-        <div class="body-main flex-1 overflow-x-hidden">
+        <div class="body-main flex-1">
 <!--           <div class="body-head hidden">
             <div class="body-head-width">
               <div style="display: flex;-webkit-box-align: center;align-items: center;">
@@ -72,33 +72,35 @@
                 <div class="body-head-title" style=""><span style="color:#FFFFFF;">You’ve worked your whole life in this fishery and deserve a fair exit.</span> We help you sell your quota to buyers who care the industry as much as you do.</div>
               </div>
             </div>
-            <div class="overflow-auto">
-              <ul class="w-auto flex items-center space-x-4" style="width:1536px;">
-                <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
-                  <div class="font-space text-base leading-5">
-                    <div class="mb-4 text-white font-bold">Reach dozens of qualified buyers</div>
-                    <div class="text-sm" style="color:#888888;">Get the advantage. </div>
-                  </div>
-                </li>
-                <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
-                  <div class="font-space text-base leading-5">
-                    <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
-                    <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
-                  </div>
-                </li>
-                <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
-                  <div class="font-space text-base leading-5">
-                    <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
-                    <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
-                  </div>
-                </li>
-                <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
-                  <div class="font-space text-base leading-5">
-                    <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
-                    <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
-                  </div>
-                </li>
-              </ul>
+            <div class="body-head-list" style="height:180px;">
+              <div class="overflow-auto no-scrollbar body-head-list-box">
+                <ul class="w-auto flex items-center space-x-4 body-head-list-ul" style="">
+                  <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
+                    <div class=" text-base leading-5">
+                      <div class="mb-4 text-white font-bold">Reach dozens of qualified buyers</div>
+                      <div class="text-sm" style="color:#888888;">Get the advantage. </div>
+                    </div>
+                  </li>
+                  <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
+                    <div class=" text-base leading-5">
+                      <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
+                      <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
+                    </div>
+                  </li>
+                  <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
+                    <div class=" text-base leading-5">
+                      <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
+                      <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
+                    </div>
+                  </li>
+                  <li class="body-head-list-li rounded-lg p-8" style="background:#222222;">
+                    <div class=" text-base leading-5">
+                      <div class="mb-4 text-white font-bold">No commissions or listing fees</div>
+                      <div class="text-sm" style="color:#888888;">We confidentially market your listing to hundreds of qualified buyers. Getting you the best price, each time. You generally receive an all-cash binding offer in 3 days.</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           
@@ -409,13 +411,13 @@
     background: black;
     color: white;
     font-size: 12px;
-    font-family: Everett;
+    font-family: -apple-system, system-ui;
   }
   a {
     text-decoration: none;
   }
-  .font-space {
-    font-family: Space Grotesk;
+  .no-scrollbar::-webkit-scrollbar {
+    display: none
   }
   .mobile-nav {
     display: none;
@@ -504,6 +506,20 @@
     font-size:24px;
     line-height: 32px;
   }
+  .body-head-list {
+    position: relative;
+  }
+  .body-head-list-box {
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: auto;
+    width: calc(100vw - ((100vw - 1764px)/2) - 423px);
+    margin-right: calc((1764px - 100vw)/2);
+  }
+  .body-head-list-ul {
+    width:1553pxpx;
+  }
   .body-head-list-li {
     width: 372px;
     height: 180px;
@@ -564,7 +580,7 @@
     font-weight: 700;
   }
   .body-content-title {
-    margin-left: 54px;
+/*     margin-left: 54px; */
   }
   .body-content-li:first-child .body-content-title-box::after {
     content: "";
@@ -713,10 +729,24 @@
     display: none;
   }
   
+  @media (max-width: 1764px) {
+    .body-head-list-box {
+      width: calc(100vw - 423px);
+      margin-right: -40px;
+    }
+    .body-head-list-ul {
+      width: 1553px;
+    }
+  }
+  
   @media (max-width: 1280px) {
     .slide-bar {
       padding-right: 0px;
       max-width: 252px;
+    }
+    .body-head-list-box {
+      width: calc(100vw - 292px);
+      margin-right: -40px;
     }
   }
   @media (max-width: 960px) {
@@ -745,6 +775,11 @@
       margin-right: 0px;
       margin-bottom: 64px;
     }
+    .body-head-list-box {
+      position: relative;
+      width: calc(100vw - 40px);
+      margin-right: -40px;
+    }
     .body-head-title {
       font-size:18px;
       line-height: 24px;
@@ -768,7 +803,7 @@
       padding-left: 21px;
     }
     .body-content-title {
-      margin-left: 34px;
+/*       margin-left: 34px; */
     }
     .body-content-text-box.more {
       margin-left: -32px;
@@ -836,6 +871,10 @@
     .body-head-width {
       display: none;
     }
+    .body-head-list-box {
+      width: calc(100vw - 16px);
+      margin-right: -16px;
+    }
     .body-head-title {
       font-size:16px;
       line-height: 20px;
@@ -902,6 +941,5 @@
       font-size: 12px;
       margin: 0px;
     }
-      
   }
 </style>
