@@ -68,7 +68,7 @@
           </div> -->
           <div class="mb-10 xl:mb-16">
             <div class="mb-8 xl:mb-14">
-              <div style="max-width:933px;max-width:100%">
+              <div style="max-width:933px">
                 <div class="body-head-title" style=""><span style="color:#FFFFFF;">You’ve worked your whole life in this fishery and deserve a fair exit.</span> We help you sell your quota to buyers who care the industry as much as you do.</div>
               </div>
             </div>
