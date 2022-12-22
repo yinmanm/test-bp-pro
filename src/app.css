@@ -9,7 +9,7 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: -apple-system, system-ui;
+  font-family: system-ui, -apple-system;
 }
 
 a {

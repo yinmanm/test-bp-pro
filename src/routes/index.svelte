@@ -10,7 +10,7 @@
     <nav class="mobile-nav">
       <div class="mobile-nav-px">
         <div class="mobile-nav-flex">
-          <a href="/" style="width:137px;">
+          <a href="/" style="width:150px;">
             <span class="logo-text">BeachPrice Pro</span>
           </a>
           <span class="mobile-nav-menu">Menu</span>
@@ -23,7 +23,7 @@
           <div class="slide-bar-flex">
             <div>
               <div style="margin-bottom:80px;">
-                <a href="/" style="">
+                <a href="/" style="width:150px;">
                   <span class="logo-text">BeachPrice Pro</span>
                 </a>
               </div>
@@ -411,7 +411,7 @@
     background: black;
     color: white;
     font-size: 12px;
-    font-family: -apple-system, system-ui;
+    font-family: system-ui;
   }
   a {
     text-decoration: none;
@@ -431,7 +431,6 @@
     align-items: center;
   }
   .logo-text {
-    font-family: 'Everett';
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -520,7 +519,6 @@
     align-items: center;
     justify-content: space-between;
     flex-flow: column nowrap;
-    font-family: monospace;
   }
   .slide-container {
     display: flex;
@@ -549,12 +547,11 @@
   }
   
   .x.slide-container > li {
-    font-size: 64px;
     width: 372px;
     height: 180px;
   }
   .body-head-list-ul {
-    width:1553pxpx;
+    width:1553px;
   }
   .body-head-list-li {
     width: 372px;
@@ -709,7 +706,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 120%;
-    font-family: "Nouvelle Grotesk", monospace, sans-serif;
     color: rgb(206, 206, 206);
     width: 100%;
     padding-right: 6px;
@@ -718,7 +714,6 @@
   .body-content-text-p {
     font-weight: 400;
     color: rgb(150, 150, 150);
-    font-family: "Nouvelle Grotesk", monospace, sans-serif;
     margin-top: 5px;
     font-size: 13px;
     line-height: 120%;
@@ -726,7 +721,6 @@
   }
   .body-content-text-web {
     display: flex;
-    font-family: "Nouvelle Grotesk", monospace, sans-serif;
     font-weight: 500;
     font-size: 10px;
     line-height: 120%;
@@ -910,6 +904,21 @@
     .body-head-list-box {
       width: calc(100vw - 16px);
       margin-right: -16px;
+    }
+    .slide-container.x {
+      height: 200px;
+    }
+    .x.slide-container > li {
+      width: 300px;
+      height: 200px;
+    }
+    .body-head-list-ul {
+      width:1553px;
+    }
+    .body-head-list-li {
+      width: 300px;
+      height: 200px;
+      padding: 24px;
     }
     
     .body-head-title {
