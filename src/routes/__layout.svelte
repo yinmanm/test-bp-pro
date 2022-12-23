@@ -11,7 +11,7 @@
       onAuthStateChanged(auth, (user) => {
         if (user) {
           const uid = user.uid;
-          window.location = '/';
+          // window.location = '/';
         } else {
           window.location = '/login';
         }

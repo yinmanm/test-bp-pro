@@ -10,6 +10,7 @@
   let codeErrorText = "";
   let error;
   let showGetCodeButton = true;
+  let loginButtonDisabled = false;
 
   const generateRecaptcha = () => {
     window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {
@@ -54,13 +55,16 @@
       codeError = false;
       codeErrorText = ""
     }
+    loginButtonDisabled = true;
     let confirmationResult = window.confirmationResult;
     confirmationResult.confirm(phoneCode).then((result) => {
       // User signed in successfully.
       const user = result.user;
-      console.log(user);
+      window.location = '/';
+      // console.log(user);
       // ...
     }).catch((error) => {
+      loginButtonDisabled = false;
       // User couldn't sign in (bad verification code?)
       // ...
     });
@@ -108,7 +112,7 @@
         </div>
 
         <div>
-          <button type="submit" on:click={handleSubmit} class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign in</button>
+          <button type="submit" on:click={handleSubmit} disabled={loginButtonDisabled} class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign in</button>
         </div>
       </form>
 
