@@ -24,18 +24,21 @@
     e.preventDefault();
     if(!phone) {
       phoneError = true;
-      phoneErrorText = "please input the phone";
+      phoneErrorText = "please input the phone!";
       return false;
+    }else {
+      phoneError = false;
+      phoneErrorText = "";
     }
     if(phone) {
-      // showGetCodeButton = false;
+      showGetCodeButton = false;
       generateRecaptcha();
       let appVerifier = window.recaptchaVerifier;
       signInWithPhoneNumber(auth, phone, appVerifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
       }).catch((error) => {
-        console.log('error===',error)
+        console.log(error)
       });
     }
     
@@ -44,7 +47,23 @@
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!phone || !phoneCode) {
+      codeError = true;
+      codeErrorText = "please input the phone and code!"
+      return false;
+    }else {
+      codeError = false;
+      codeErrorText = ""
     }
+    let confirmationResult = window.confirmationResult;
+    confirmationResult.confirm(phoneCode).then((result) => {
+      // User signed in successfully.
+      const user = result.user;
+      console.log(user);
+      // ...
+    }).catch((error) => {
+      // User couldn't sign in (bad verification code?)
+      // ...
+    });
   };
 </script>
 
@@ -71,17 +90,11 @@
           <label for="code" class="block text-sm font-medium text-gray-700"> Phone Code </label>
           <div class="mt-1 flex rounded-md shadow-sm">
             <div class="relative flex flex-grow items-stretch focus-within:z-10">
-              <input id="code" name="code" type="number" autocomplete="phone-code" bind:value={phoneCode} required class="block w-full rounded-none rounded-l-md border border-gray-300 pl-4 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+              <input id="code" name="code" type="number" autocomplete="phone-code" bind:value={phoneCode} required class="block w-full rounded-none rounded-l-md border border-gray-300 pl-4 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" style="height:38px;">
             </div>
-            {#if showGetCodeButton}
-            <button on:click={getCode} type="button" class="relative -ml-px inline-flex items-center space-x-2 rounded-r-md border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+            <button on:click={getCode} type="button" disabled={!showGetCodeButton} class="relative -ml-px inline-flex items-center space-x-2 rounded-r-md border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
               <span>get code</span>
             </button>
-            {:else}
-              <button type="button" class="relative -ml-px inline-flex items-center space-x-2 rounded-r-md border border-gray-300 bg-gray-50 p-2 text-sm font-medium text-gray-700 focus:outline-none">
-              <span>sended</span>
-            </button>
-            {/if}
           </div>
           {#if codeError}
             <div class="mt-1 text-red-500 text-sm">{codeErrorText}</div>
@@ -103,4 +116,9 @@
   </div>
 </div>
 
-<style></style>
+<style>
+  button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+</style>
