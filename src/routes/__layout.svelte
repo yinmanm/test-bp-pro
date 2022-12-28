@@ -5,7 +5,7 @@
   import { auth } from "../firebase";
 
   onMount(() => {
-    if(window.location.pathname == '/login') {
+    if(window.location.pathname == '/login' || window.location.pathname == '/register' || window.location.pathname == '/') {
       return
     }else {
       onAuthStateChanged(auth, (user) => {
