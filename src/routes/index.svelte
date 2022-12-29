@@ -17,7 +17,7 @@
           <ProSvg/>
         </div>
         <div class="">
-          <div class="text-black font-medium">Log In</div>
+          <a href="/login" class="text-black font-medium">Log In</a>
         </div>
       </div>
     </div>
