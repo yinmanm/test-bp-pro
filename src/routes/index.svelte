@@ -87,7 +87,7 @@
   <section class="bg-white">
     <div class="px-6 md:px-10">
       <div class="max-w-3xxl w-full mx-auto">
-        <div class="py-14 md:py-32">
+        <div class="py-14 md:pb-32 md:pt-14">
           <div class="mb-14 md:mb-20">
             <h3 class="text-gray-900 text-3xl font-extrabold text-center">How it works</h3>
             <div class="mt-4 md:mt-6 mx-auto md:text-xl text-gray-600 leading-normal text-center" style="max-width:480px;">BeachPrice Pro connects sellers with a curated list of buyers, and allows them to confidentially sell with a few simple clicks.</div>
